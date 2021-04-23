@@ -1,0 +1,32 @@
+_schema-version: "3.2"
+ID: capbookshop
+version: 0.0.1
+modules:
+- name: capbookshop-approuter
+  type: approuter.nodejs
+  path: capbookshop-approuter
+  requires:
+  - name: capbookshop_html_repo_runtime
+  - name: uaa_capbookshop
+  - name: capbookshop_destination
+  parameters:
+    disk-quota: 256M
+    memory: 256M
+resources:
+- name: capbookshop_destination
+  type: org.cloudfoundry.managed-service
+  parameters:
+    service: destination
+    service-plan: lite
+- name: capbookshop_html_repo_runtime
+  type: org.cloudfoundry.managed-service
+  parameters:
+    service: html5-apps-repo
+    service-plan: app-runtime
+- name: uaa_capbookshop
+  type: org.cloudfoundry.managed-service
+  parameters:
+    path: ./xs-security.json
+    service: xsuaa
+    service-name: capbookshop-xsuaa-service
+    service-plan: application

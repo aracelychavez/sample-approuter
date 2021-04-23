@@ -1,0 +1,53 @@
+{
+    "inputs": [
+        {
+            "id": "UI5VersionV4",
+            "type": "command",
+            "command": "sap.ux.appGenerator.ui5VersionV4"
+        }
+    ],
+    "configurations": [
+        {
+            "name": "Start booksapp",
+            "type": "node",
+            "request": "launch",
+            "runtimeExecutable": "npm",
+            "cwd": "${workspaceFolder}/booksapp",
+            "windows": {
+                "runtimeExecutable": "npm.cmd"
+            },
+            "runtimeArgs": [
+                "run-script",
+                "start"
+            ],
+            "console": "integratedTerminal",
+            "internalConsoleOptions": "neverOpen",
+            "port": 9229,
+            "env": {
+                "DEBUG": "--inspect",
+                "run.config": "{\"handlerId\":\"fiori_tools\",\"runnableId\":\"/home/user/projects/capbookshop/booksapp\"}"
+            }
+        },
+        {
+            "name": "Start booksapp Local",
+            "type": "node",
+            "request": "launch",
+            "cwd": "${workspaceFolder}/booksapp",
+            "runtimeExecutable": "npm",
+            "windows": {
+                "runtimeExecutable": "npm.cmd"
+            },
+            "runtimeArgs": [
+                "run-script",
+                "start-local"
+            ],
+            "console": "integratedTerminal",
+            "internalConsoleOptions": "neverOpen",
+            "port": 9229,
+            "env": {
+                "run.config": "{\"handlerId\":\"fiori_tools\",\"runnableId\":\"/home/user/projects/capbookshop/booksapp\"}"
+            }
+        }
+    ],
+    "compounds": []
+}

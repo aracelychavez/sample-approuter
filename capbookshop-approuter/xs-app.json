@@ -6,5 +6,6 @@
       "target": "$1",
       "destination": "CAPBookshop"
     }
-  ]
+  ],
+  "welcomeFile": "/booksapp"
 }

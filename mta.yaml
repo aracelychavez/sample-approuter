@@ -26,9 +26,23 @@ modules:
       - booksapp.zip
       name: booksapp
       target-path: resources/
+    - artifacts:
+      - ordersapp.zip
+      name: ordersapp
+      target-path: resources/
 - name: booksapp
   type: html5
   path: booksapp
+  build-parameters:
+    build-result: dist
+    builder: custom
+    commands:
+    - npm install
+    - npm run build:cf
+    supported-platforms: []
+- name: ordersapp
+  type: html5
+  path: ordersapp
   build-parameters:
     build-result: dist
     builder: custom
